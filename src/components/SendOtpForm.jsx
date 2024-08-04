@@ -3,9 +3,8 @@ import React, { useState } from "react";
 
 function SendOtpForm({ mobile, setMobile, setStep }) {
   const [validNumber, setValidNumber] = useState(true);
-  const [inputValue, setInputValue] = useState(mobile);
+  const [inputValue, setInputValue] = useState("");
 
-  
   const handleInputChange = (e) => {
     const value = e.target.value;
 
@@ -30,7 +29,9 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
       setInputValue("");
     } else {
       setValidNumber(true);
+    
       setStep(2);
+      
     }
   };
 
@@ -64,19 +65,19 @@ function SendOtpForm({ mobile, setMobile, setStep }) {
           ارسال کد تایید
         </button>
       </form>
+      <div>
+        {!validNumber && (
+          <p className="text-center mt-4 font-bold text-lg ">
+            شماره معتبر وارد کنید
+          </p>
+        )}
+      </div>
       <p className="text-center mt-4">
         حساب کاربری ندارید؟
         <a href="#" className="text-blue-600 mr-1">
           ثبت‌ نام
         </a>
       </p>
-      <div>
-        {!validNumber && (
-          <p className="text-center mt-4 font-bold text-lg">
-            شماره معتبر وارد کنید
-          </p>
-        )}
-      </div>
     </div>
   );
 }

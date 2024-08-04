@@ -14,7 +14,7 @@ function IPBox() {
       alert("لطفاً یک آدرس IP معتبر وارد کنید.");
       return;
     }
- 
+
     setIsSearching(true);
     try {
       const response = await fetch(
@@ -89,7 +89,9 @@ function IPBox() {
             <div className="flex-grow">
               <div className="grid grid-cols-2 gap-2">
                 <p>
-                  <span className="text-gray-400 font-semibold">Ip Address:</span>{" "}
+                  <span className="text-gray-400 font-semibold">
+                    Ip Address:
+                  </span>{" "}
                   {ip.ip}
                 </p>
                 <p>
@@ -109,7 +111,9 @@ function IPBox() {
                   {ip.location.lat}
                 </p>
                 <p>
-                  <span className="text-gray-400 font-semibold">Longitude:</span>{" "}
+                  <span className="text-gray-400 font-semibold">
+                    Longitude:
+                  </span>{" "}
                   {ip.location.lng}
                 </p>
               </div>
@@ -122,17 +126,3 @@ function IPBox() {
 }
 
 export default IPBox;
-
-{
-  /* <div className={`ip-info ${isSearched ? 'show' : 'hide'}`}>
-      {isSearched && ipInfo && (
-          <>
-              <h2>اطلاعات IP</h2>
-              <p>IP: {ipInfo.ip}</p>
-              <p>کشور: {ipInfo.country_name}</p>
-              <p>شهر: {ipInfo.city}</p>
-              <p>ISP: {ipInfo.org}</p>
-          </>
-      )}
-  </div> */
-}

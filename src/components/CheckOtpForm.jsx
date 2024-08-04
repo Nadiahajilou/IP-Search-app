@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function CheckOtpForm({ mobile, setStep, setCode, code }) {
+function CheckOtpForm({ mobile, setStep, setCode, code ,}) {
   const [otpValues, setOtpValues] = useState(["", "", "", ""]);
   const inputRefs = [useRef(), useRef(), useRef(), useRef()];
+
   const [seconds, setSeconds] = useState(1);
   const [minutes, setMinutes] = useState(2);
   const [isButtonDisable, setIsButtonDisable] = useState(true);
@@ -38,7 +39,7 @@ const navigate=useNavigate()
       newOtpValues[index] = value;
       setOtpValues(newOtpValues);
 
-      setOtpValues(newOtpValues);
+     
       console.log(otpValues);
       setCode(newOtpValues.join(""));
 
@@ -55,7 +56,7 @@ const navigate=useNavigate()
     }
   };
   const handleResendCode = () => {
- د
+
     setMinutes(2);
     setSeconds(0);
     setIsButtonDisable(true);
@@ -78,6 +79,7 @@ const navigate=useNavigate()
   };
   const handleStepBack = () => {
     setStep(1);
+   
   };
   return (
     <div className="relative mx-auto mt-32 w-[375px] h-[430px] border-solid border-2 border-gray-300 rounded-[16px] bg-[#FFFFFF] py-42 px-8">

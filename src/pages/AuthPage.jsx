@@ -19,6 +19,7 @@ function AuthPage() {
           code={code}
           setStep={setStep}
           mobile={mobile}
+          setMobile={setMobile}
         />
       )}
     </div>
